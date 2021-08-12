@@ -8,6 +8,11 @@
 
 
 img {
-    width: 64px;
-    height: auto;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+#tables {
+    display: flex;
+    flex-direction: row;
 }

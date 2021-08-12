@@ -15,60 +15,522 @@
 <body>
 	<h1>F-Zero GX Random Parts Selector</h1>
     <!-- Select mode for pool of parts -->
-    <select id="input-mode" name="input-mode">
+    <!-- <select id="input-mode" name="input-mode">
         <option selected="selected"></option>
         <option value="std">Standard Parts</option>
         <option value="ax">Standard + AX Parts</option>
         <option value="all">All Parts</option>
-    </select>
-    <!-- Number fields for # bodies, cockpits, and boosters to select -->
-    <div class="number-field">
-        <label for="input-body">Body:</label>
-        <input type="number" id="input-body" name="input-body" value="1" min="1" max="10">
-    </div>
-    <div class="number-field">
-        <label for="input-cockpit">Cockpit:</label>
-        <input type="number" id="input-cockpit" name="input-cockpit" value="1"  min="1" max="10">
-    </div>
-    <div class="number-field">
-        <label for="input-booster">Booster:</label>
-        <input type="number" id="input-booster" name="input-booster" value="1"  min="1" max="10">
-    </div>
+    </select> -->
 
-    <button name="randomize" onclick="randomize()">Randomize!</button>
+    <button name="randomize2" onclick="randomize2()">Randomize v2!</button>
 
-<div>
-    <h3>Random Parts</h3>
-    <div>
-        <h3>Body</h3>
-        <!-- <table id="body">
-            <thead>
-                <tr>
-                <th>ID</th>
-                <th>Model</th>
-                <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img src="./media/nparts-order/body/1.png" /></td>
-                    <td>Brave Eagle</td>
-                </tr>
-            </tbody>
-        </table> -->
-
-        <ul id="body"></ul>
+    <div id="tables">
+        <div>
+            <h2>Body</h2>
+            <div class="number-field">
+                <label for="input-body"></label>
+                <input type="number" id="input-body" name="input-body" value="1" min="1" max="10">
+            </div>
+            <table id="body">
+                <thead>
+                    <th>ID</th>
+                    <th>Include</th>
+                    <th>Model</th>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr class="std">
+                        <td>1</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/1.png" /></td>
+                        <td>Brave Eagle</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>2</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/2.png" /></td>
+                        <td>Galaxy Falcon</td>
+                    </tr>
+                    <tr class="std">
+                        <td>3</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/3.png" /></td>
+                        <td>Giant Planet</td>
+                    </tr>
+                    <tr class="std">
+                        <td>4</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/4.png" /></td>
+                        <td>Megalo Cruiser                    </td>
+                    </tr>
+                    <tr class="std">
+                        <td>5</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/5.png" /></td>
+                        <td>Splash Whale</td>
+                    </tr>
+                    <tr class="std">
+                        <td>6</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/6.png" /></td>
+                        <td>Wild Chariot</td>
+                    </tr>
+                    <tr class="std">
+                        <td>7</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/7.png" /></td>
+                        <td>Valiant Jaguar</td>
+                    </tr>
+                    <tr class="std">
+                        <td>8</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/8.png" /></td>
+                        <td>Holy Spider</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>9</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/9.png" /></td>
+                        <td>Blood Raven</td>
+                    </tr>
+                    <tr class="std">
+                        <td>10</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/10.png" /></td>
+                        <td>Funny Swallow</td>
+                    </tr>
+                    <tr class="std">
+                        <td>11</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/11.png" /></td>
+                        <td>Optical Wing</td>
+                    </tr>
+                    <tr class="ax">
+                        <td>12</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/12.png" /></td>
+                        <td>Mad Bull</td>
+                    </tr>
+                    <tr class="std">
+                        <td>13</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/13.png" /></td>
+                        <td>Big Tyrant</td>
+                    </tr>
+                    <tr class="std">
+                        <td>14</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/14.png" /></td>
+                        <td>Grande Base</td>
+                    </tr>
+                    <tr class="std">
+                        <td>15</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/15.png" /></td>
+                        <td>Fire Wolf</td>
+                    </tr>
+                    <tr class="std">
+                        <td>16</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/16.png" /></td>
+                        <td>Dread Hammer</td>
+                    </tr>
+                    <tr class="std">
+                        <td>17</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/17.png" /></td>
+                        <td>Silver Sword</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>18</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/18.png" /></td>
+                        <td>Rage Knight</td>
+                    </tr>
+                    <tr class="std">
+                        <td>19</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/19.png" /></td>
+                        <td>Rapid Barrel</td>
+                    </tr>
+                    <tr class="std">
+                        <td>20</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/20.png" /></td>
+                        <td>Sky Horse</td>
+                    </tr>
+                    <tr class="std">
+                        <td>21</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/21.png" /></td>
+                        <td>Aqua Goose</td>
+                    </tr>
+                    <tr class="std">
+                        <td>22</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/22.png" /></td>
+                        <td>Space Cancer</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>23</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/23.png" /></td>
+                        <td>Metal Shell</td>
+                    </tr>
+                    <tr class="std">
+                        <td>24</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/24.png" /></td>
+                        <td>Speedy Dragon</td>
+                    </tr>
+                    <tr class="std">
+                        <td>25</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/body/25.png" /></td>
+                        <td>Liberty Manta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2>Cockpit</h2>
+            <div class="number-field">
+                <label for="input-cockpit"></label>
+                <input type="number" id="input-cockpit" name="input-cockpit" value="1"  min="1" max="10">
+            </div>
+            <table id="cockpit">
+                <thead>
+                    <th>ID</th>
+                    <th>Include</th>
+                    <th>Model</th>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr class="std">
+                        <td>1</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/1.png" /></td>
+                        <td>Wonder Worm</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>2</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/2.png" /></td>
+                        <td>Rush Cyclone</td>
+                    </tr>
+                    <tr class="std">
+                        <td>3</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/3.png" /></td>
+                        <td>Combat Cannon</td>
+                    </tr>
+                    <tr class="std">
+                        <td>4</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/4.png" /></td>
+                        <td>Muscle Gorilla</td>
+                    </tr>
+                    <tr class="std">
+                        <td>5</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/5.png" /></td>
+                        <td>Cyber Fox</td>
+                    </tr>
+                    <tr class="std">
+                        <td>6</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/6.png" /></td>
+                        <td>Heat Snake</td>
+                    </tr>
+                    <tr class="std">
+                        <td>7</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/7.png" /></td>
+                        <td>Rave Drifter</td>
+                    </tr>
+                    <tr class="std">
+                        <td>8</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/8.png" /></td>
+                        <td>Aerial Bullet</td>
+                    </tr>
+                    <tr class="std">
+                        <td>9</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/9.png" /></td>
+                        <td>Spark Bird</td>
+                    </tr>
+                    <tr class="std">
+                        <td>10</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/10.png" /></td>
+                        <td>Blast Camel</td>
+                    </tr>
+                    <tr class="std">
+                        <td>11</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/11.png" /></td>
+                        <td>Dark Chaser</td>
+                    </tr>
+                    <tr class="std">
+                        <td>12</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/12.png" /></td>
+                        <td>Garnet Phantom</td>
+                    </tr>
+                    <tr class="std">
+                        <td>13</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/13.png" /></td>
+                        <td>Bright Spear</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>14</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/14.png" /></td>
+                        <td>Hyper Stream</td>
+                    </tr>
+                    <tr class="std">
+                        <td>15</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/15.png" /></td>
+                        <td>Super Lynx</td>
+                    </tr>
+                    <tr class="std">
+                        <td>16</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/16.png" /></td>
+                        <td>Crystal Egg</td>
+                    </tr>
+                    <tr class="std">
+                        <td>17</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/17.png" /></td>
+                        <td>Windy Shark</td>
+                    </tr>
+                    <tr class="std">
+                        <td>18</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/18.png" /></td>
+                        <td>Red Rex</td>
+                    </tr>
+                    <tr class="std">
+                        <td>19</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/19.png" /></td>
+                        <td>Sonic Soldier</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>20</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/20.png" /></td>
+                        <td>Maximum Star</td>
+                    </tr>
+                    <tr class="std">
+                        <td>21</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/21.png" /></td>
+                        <td>Moon Snail</td>
+                    </tr>
+                    <tr class="ax">
+                        <td>22</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/22.png" /></td>
+                        <td>Crazy Buffalo</td>
+                    </tr>
+                    <tr class="std">
+                        <td>23</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/23.png" /></td>
+                        <td>Scud Viper</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>24</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/24.png" /></td>
+                        <td>Round Disk</td>
+                    </tr>
+                    <tr class="std">
+                        <td>25</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/cockpit/25.png" /></td>
+                        <td>Energy Crest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2>Booster</h2>
+            <div class="number-field">
+                <label for="input-booster"></label>
+                <input type="number" id="input-booster" name="input-booster" value="1"  min="1" max="10">
+            </div>
+            <table id="booster">
+                <thead>
+                    <th>ID</th>
+                    <th>Include</th>
+                    <th>Model</th>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr class="std">
+                        <td>1</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/1.png" /></td>
+                        <td>Euros -01</td>
+                    </tr>
+                    <tr class="std">
+                        <td>2</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/2.png" /></td>
+                        <td>Triangle -GT</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>3</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/3.png" /></td>
+                        <td>Velocity -J</td>
+                    </tr>
+                    <tr class="std">
+                        <td>4</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/4.png" /></td>
+                        <td>Sunrise 140</td>
+                    </tr>
+                    <tr class="std">
+                        <td>5</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/5.png" /></td>
+                        <td>Saturn -SG</td>
+                    </tr>
+                    <tr class="std">
+                        <td>6</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/6.png" /></td>
+                        <td>Bluster -X</td>
+                    </tr>
+                    <tr class="std">
+                        <td>7</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/7.png" /></td>
+                        <td>Devilfish -RX</td>
+                    </tr>
+                    <tr class="ax">
+                        <td>8</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/8.png" /></td>
+                        <td>Mars -EX</td>
+                    </tr>
+                    <tr class="std">
+                        <td>9</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/9.png" /></td>
+                        <td>Titan -G4</td>
+                    </tr>
+                    <tr class="std">
+                        <td>10</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/10.png" /></td>
+                        <td>Extreme -ZZ</td>
+                    </tr>
+                    <tr class="std">
+                        <td>11</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/11.png" /></td>
+                        <td>Thunderbolt -V2</td>
+                    </tr>
+                    <tr class="std">
+                        <td>12</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/12.png" /></td>
+                        <td>Boxer -2C</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>13</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/13.png" /></td>
+                        <td>Shuttle -M2</td>
+                    </tr>
+                    <tr class="std">
+                        <td>14</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/14.png" /></td>
+                        <td>Punisher -4X</td>
+                    </tr>
+                    <tr class="std">
+                        <td>15</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/15.png" /></td>
+                        <td>Scorpion -R</td>
+                    </tr>
+                    <tr class="std">
+                        <td>16</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/16.png" /></td>
+                        <td>Raiden -88</td>
+                    </tr>
+                    <tr class="std">
+                        <td>17</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/17.png" /></td>
+                        <td>Impulse 220</td>
+                    </tr>
+                    <tr class="std">
+                        <td>18</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/18.png" /></td>
+                        <td>Bazooka -YS</td>
+                    </tr>
+                    <tr class="std">
+                        <td>19</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/19.png" /></td>
+                        <td>Meteor -RR</td>
+                    </tr>
+                    <tr class="std">
+                        <td>20</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/20.png" /></td>
+                        <td>Tiger -RZ</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>21</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/21.png" /></td>
+                        <td>Hornet -FX</td>
+                    </tr>
+                    <tr class="std">
+                        <td>22</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/22.png" /></td>
+                        <td>Jupiter -Q</td>
+                    </tr>
+                    <tr class="std">
+                        <td>23</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/23.png" /></td>
+                        <td>Comet -V</td>
+                    </tr>
+                    <tr class="ex">
+                        <td>24</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/24.png" /></td>
+                        <td>Crown -77</td>
+                    </tr>
+                    <tr class="std">
+                        <td>25</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><img src="./media/parts-order/booster/25.png" /></td>
+                        <td>Triple -Z</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div>
-        <h3>Cockpit</h3>
-        <ul id="cockpit"></ul>
-    </div>
-    <div>
-        <h3>Booster</h3>
-        <ul id="booster"></ul>
-    </div>
-</div>
 
 </body>
 </html>
+
+
+
+
