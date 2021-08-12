@@ -16,3 +16,9 @@ img {
     display: flex;
     flex-direction: row;
 }
+
+
+tr {
+    /*/ Prevents table row from losing alignment on JS HTML changes /*/
+    display: table-row-group;
+}
