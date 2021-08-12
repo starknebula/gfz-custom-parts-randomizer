@@ -39,7 +39,7 @@ function getCheckedRowIndexes(table){
         var tableRow = tableBody.children[tableRowIndex];
         // Convert to zero-based index
         var index = tableRow.children[0].innerText - 1;
-        // Check box is element 1 of table row. Input is sub element (0).
+        // Checkbox is element 1 of table row. Input is sub element (0).
         var checkbox = tableRow.children[1].children[0];
 
         var isChecked = checkbox.checked;
@@ -56,7 +56,7 @@ function setRowsState(table, state){
     var tbody = table.children[1];
     // Turn off all rows
     for (var index in tbody.children){
-        // Getting a weird error where item() is last element returned? Skip it.
+        // Getting a weird error where item is last element returned? Skip it.
         if (isNaN(index))
         continue;
         //
@@ -94,4 +94,38 @@ function getRandomSubSelection(indexes, total){
         indexesClone.splice(randomIndex, 1);
     }
     return subIndexes;
+}
+
+function setRowsCheckboxByClass(classID, isChecked){
+    var rows = document.getElementsByClassName(classID);
+    for (var i in rows){
+        // Getting a weird error where item is last element returned? Skip it.
+        if (isNaN(i))
+        continue;
+        //
+        var row = rows[i];
+        // Checkbox is element 1 of table row. Input is sub element (0).
+        var checkbox = row.children[1].children[0];
+        checkbox.checked = isChecked;
+    }
+}
+
+function setRowsChecked(isChecked){
+    setRowsCheckboxByClass('std', isChecked);
+    setRowsCheckboxByClass('ax', isChecked);
+    setRowsCheckboxByClass('ex', isChecked);
+}
+
+function showHideTables(state){
+    // Create array to iterate over
+    var tableIDs = ['body', 'cockpit', 'booster'];
+    // Iterate over each table
+    for (var index in tableIDs){
+        // Get string from array
+        var tableID = tableIDs[index];
+        // Get tables from DOM
+        var table = document.getElementById(tableID);
+        // Disable all rows, enable those selected
+        setRowsState(table, state);
+    }
 }
