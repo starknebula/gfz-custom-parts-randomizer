@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+	<meta charset='UTF8' />
+	<title>F-Zero GX Random Parts Selector</title>
+
+    <!-- CSS -->
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src="./get-parts.js" ></script>
+</head>
+
+<body>
+	<h1>F-Zero GX Random Parts Selector</h1>
+    <!-- Select mode for pool of parts -->
+    <select id="input-mode" name="input-mode">
+        <option selected="selected"></option>
+        <option value="std">Standard Parts</option>
+        <option value="ax">Standard + AX Parts</option>
+        <option value="all">All Parts</option>
+    </select>
+    <!-- Number fields for # bodies, cockpits, and boosters to select -->
+    <div class="number-field">
+        <label for="input-body">Body:</label>
+        <input type="number" id="input-body" name="input-body" value="1" min="1" max="10">
+    </div>
+    <div class="number-field">
+        <label for="input-cockpit">Cockpit:</label>
+        <input type="number" id="input-cockpit" name="input-cockpit" value="1"  min="1" max="10">
+    </div>
+    <div class="number-field">
+        <label for="input-booster">Booster:</label>
+        <input type="number" id="input-booster" name="input-booster" value="1"  min="1" max="10">
+    </div>
+
+    <button name="randomize" onclick="randomize()">Randomize!</button>
+
+<div>
+    <h3>Random Parts</h3>
+    <div>
+        <h3>Body</h3>
+        <!-- <table id="body">
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Model</th>
+                <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="./media/nparts-order/body/1.png" /></td>
+                    <td>Brave Eagle</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <ul id="body"></ul>
+    </div>
+    <div>
+        <h3>Cockpit</h3>
+        <ul id="cockpit"></ul>
+    </div>
+    <div>
+        <h3>Booster</h3>
+        <ul id="booster"></ul>
+    </div>
+</div>
+
+</body>
+</html>
