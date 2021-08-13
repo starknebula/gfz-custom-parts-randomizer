@@ -1,24 +1,141 @@
-.number-field label{
-    min-width: 150px;
+/*/ IMPORT FONTS /*/
+/*/ Lato: https://fonts.google.com/specimen/Lato /*/
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+/*/ Archivo: https://fonts.google.com/specimen/Archivo /*/
+@import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
+
+:root {
+	/*/ COLORS /*/
+	--color-white: #FFFFFF;
+	--color-black: #0c0808;
+	--color-accent:	#ffb60f;
 }
 
-.test{
-    min-width: 150px;
+
+body {
+    width: 800px;
+    margin: auto;
+    overflow-y:scroll;
+}
+
+* {
+    /*/ Default font /*/
+    font-family: 'Archivo';
+    color: var(--color-black);
+}
+
+#content {
+    background-color: var(--color-white);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*/ Heading font /*/
+    font-family: 'Archivo';
+}
+
+/*/ Icons in table /*/
+table img {
+    max-width: 40px;
+    max-height: 40px;
 }
 
 
-img {
-    max-width: 32px;
-    max-height: 32px;
+/*///////////*/
+/*/ OPTIONS /*/
+/*///////////*/
+#options {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+#options div {
+    padding-right: 30px;
 }
 
+
+/*//////////*/
+/*/ TABLES /*/
+/*//////////*/
+
+/*/ Tables for body, cockpit, booster /*/
 #tables {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+/*/ Table divs is container for body, cockpit, booster elements /*/
+#tables div {
+    /* flex-grow: 1; */
+    width: 265px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+td {
+    font-size: 18px;
+}
+
+.table-header {
+    text-align: center;
 }
 
 
-tr {
-    /*/ Prevents table row from losing alignment on JS HTML changes /*/
-    display: table-row-group;
+/*///////////*/
+/*/ BUTTONS /*/
+/*///////////*/
+button {
+	background-color: var(--color-white);;
+	color: var(--color-black);
+
+	border-color: var(--color-black);
+	border-style: solid;
+	border-width: thin;
+    border-radius: 6px;
+
+	text-decoration: none;
+	outline: none;	
+}
+button:hover {
+	/*/ On hover change text to accent /*/
+	background-color: var(--color-accent);
+}
+button:active {
+	background-color: var(--color-black);
+	color: var(--color-accent);
+}
+
+
+/*//////////////*/
+/*/ HIGHLIGHTS /*/
+/*//////////////*/
+/*/ Styling for content preview headers (white on black with padding) /*/
+.highlight
+{
+	background-color: var(--color-black);
+	color: var(--color-white);
+
+	padding-left: 0.33ch;
+	padding-right: 0.33ch;
+	padding-bottom: 0.1ch;
+	padding-top: 0.0ch;
+
+	/*/ https://css-tricks.com/multi-line-padded-text/ /*/
+	display: inline;
+	/* Needs prefixing */
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+/*/ Add the "accent" modifier to change highlight color /*/
+.highlight.accent {
+	background-color: var(--color-black);
+	color: var(--color-accent);
+	/*/ Makes dark text on colour BG more legible /*/
+	font-weight: bold;
 }
